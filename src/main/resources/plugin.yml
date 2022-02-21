@@ -1,0 +1,8 @@
+name: PlanetUniverseFlyController
+version: '${version}'
+main: org.lumenk.planet.flycontrol.planetuniverseflycontroller.PlanetUniverseFlyController
+api-version: 1.17
+depend: [ Towny ]
+authors: [ RomeoRKPK ]
+description: Fly contol with Towny
+website: https://github.com/detDaYe/PlanetUnivirseFlyController.git
