@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 
 public class GeneralConfigProtoType {
@@ -48,16 +49,23 @@ public class GeneralConfigProtoType {
     private LocalTime battlePeriodEndAt;
 
     @Getter
-    @Setter
     private List<World> effectiveWorlds;
 
 
     private final YamlResourceUtil resource;
 
+
     public GeneralConfigProtoType(String fileName){
         resource = new YamlResourceUtil(fileName);
     }
 
+    public boolean effective(){
+        if(nowOverriding)
+            return overridingValue;
+        final LocalTime now = LocalTime.now();
+
+        return now.isAfter(battlePeriodStartAt) && now.isBefore(battlePeriodEndAt);
+    }
     public void load(){
         resource.load();
         YamlConfiguration configuration = resource.yamlConfiguration;
