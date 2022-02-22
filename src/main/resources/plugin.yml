@@ -6,3 +6,6 @@ depend: [ Towny ]
 authors: [ RomeoRKPK ]
 description: Fly contol with Towny
 website: https://github.com/detDaYe/PlanetUnivirseFlyController.git
+commands:
+  fctr:
+    description: control of fly
