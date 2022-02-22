@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'org.lumenk.planet.flycontrol'
-version = '0.0.0'
+version = '0.1.0-a1'
 
 compileJava.options.encoding = 'UTF-8'
 tasks.withType(JavaCompile) {
