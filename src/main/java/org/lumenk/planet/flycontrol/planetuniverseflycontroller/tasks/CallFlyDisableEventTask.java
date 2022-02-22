@@ -13,7 +13,7 @@ public class CallFlyDisableEventTask implements Runnable{
         Bukkit.getOnlinePlayers().forEach(p -> p.setAllowFlight(false));
     }
 
-    private static long toNext(){
+    public static long toNext(){
         final GeneralConfigProtoType config = GeneralConfigProtoType.getGenConfig();
         if(config.effective())return 0L;
 

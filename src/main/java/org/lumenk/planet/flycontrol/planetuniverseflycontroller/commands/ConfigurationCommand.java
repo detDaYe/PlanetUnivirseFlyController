@@ -1,4 +1,4 @@
-package org.lumenk.planet.flycontrol.planetuniverseflycontroller;
+package org.lumenk.planet.flycontrol.planetuniverseflycontroller.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;
