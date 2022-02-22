@@ -3,8 +3,12 @@ package org.lumenk.planet.flycontrol.planetuniverseflycontroller;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.lumenk.planet.flycontrol.planetuniverseflycontroller.commands.ConfigurationCommand;
 import org.lumenk.planet.flycontrol.planetuniverseflycontroller.listeners.PlayerJoinListener;
+import org.lumenk.planet.flycontrol.planetuniverseflycontroller.tabcomplters.ConfigCmdTabCompleter;
 import org.lumenk.planet.flycontrol.planetuniverseflycontroller.tasks.CallFlyDisableEventTask;
+
+import java.util.Objects;
 
 public final class PlanetUniverseFlyController extends JavaPlugin {
 
@@ -18,6 +22,9 @@ public final class PlanetUniverseFlyController extends JavaPlugin {
 
         final PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new PlayerJoinListener(), this);
+
+        Objects.requireNonNull(getCommand("fctr")).setExecutor(new ConfigurationCommand());
+        Objects.requireNonNull(getCommand("fctr")).setTabCompleter(new ConfigCmdTabCompleter());
 
 
     }
