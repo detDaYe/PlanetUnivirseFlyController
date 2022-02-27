@@ -9,3 +9,4 @@ website: https://github.com/detDaYe/PlanetUnivirseFlyController.git
 commands:
   fctr:
     description: control of fly
+    permission: planet.operator
