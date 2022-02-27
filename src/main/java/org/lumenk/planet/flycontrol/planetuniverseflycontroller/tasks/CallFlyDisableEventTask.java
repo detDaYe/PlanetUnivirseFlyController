@@ -10,7 +10,10 @@ import java.time.LocalTime;
 public class CallFlyDisableEventTask implements Runnable{
     @Override
     public void run() {
-        Bukkit.getOnlinePlayers().forEach(p -> p.setAllowFlight(false));
+        Bukkit.getOnlinePlayers().forEach(p -> {
+            if(!p.isOp())
+                p.setAllowFlight(false);
+        });
     }
 
     public static long toNext(){
