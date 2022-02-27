@@ -10,6 +10,7 @@ public class PlayerJoinListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event){
         if(!GeneralConfigProtoType.getGenConfig().effective())return;
+        if(event.getPlayer().isOp())return;
         event.getPlayer().setAllowFlight(false);
     }
 }
